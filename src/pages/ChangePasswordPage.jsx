@@ -22,6 +22,7 @@ const ChangePassword = () => {
 
   const navigate = useNavigate();
 
+  
   const handleChangePassword = async () => {
     if (newPassword !== confirmNewPassword) {
       alert("New password and confirm password do not match!");
@@ -38,7 +39,8 @@ const ChangePassword = () => {
       });
 
       const data = await response.json();
-
+       
+    
       if (response.ok) {
         setSuccessMessage("Password changed successfully!");
         setModalVisible(true);
