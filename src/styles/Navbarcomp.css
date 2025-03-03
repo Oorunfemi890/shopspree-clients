@@ -1,0 +1,168 @@
+/* Navbar styles */
+.navbar {
+    background-color: black;
+    height: 80px;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    width: 97%;
+    justify-content: space-between;
+}
+
+.navbar-logo h1 {
+    color: white;
+    margin-right: 20vh;
+}
+
+.navbar-links {
+    display: flex;
+    align-items: center;
+    font-size: 18px; /* Increased text size */
+}
+
+.navbar-links a {
+    color: white;
+    text-decoration: none;
+    margin-right: 25px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-links a:hover {
+    text-decoration: none;
+    background-color: orange;
+}
+
+/* Icons for each link */
+.navbar-links .icon {
+    margin-right: 5px;
+    font-size: 1.2em;
+}
+
+/* Dropdown styling */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+    border-radius: 5px;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+/* Modify hover effect only for dropdown links */
+.dropdown-content a:hover {
+    background-color: #ddd;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-arrow::after {
+    content: " ▼";
+    font-size: 0.8em;
+}
+
+/* To prevent hover effect from affecting the link button inside the dropdown */
+.dropdown-content .sign-in-link:hover {
+    background-color: transparent; /* No background color on hover */
+}
+
+/* Search bar container */
+.search-container {
+    display: flex;
+    align-items: center;
+    margin: 20px 0;
+}
+
+.search-input-container {
+    position: relative;
+    width: 300px;
+}
+
+.search-input {
+    width: 500px;
+    padding: 10px;
+    margin-top: 15px;
+    padding-left: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px 5px 5px 5px;
+    font-size: 16px;
+}
+
+.search-icon {
+    position: absolute;
+    left: 360px;
+    top: 6%;
+    transform: translateY(-50%);
+    font-size: 18px;
+    color: #ccc;
+}
+
+.search-button {
+    background-color: orange;
+    border: 1px solid #ccc;
+    width: 100px;
+    border-left: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-left: 10px;
+}
+
+.search-button:hover {
+    background-color: yellow;
+}
+
+
+.search-input:focus {
+    outline: none;
+    border-color: #4CAF50;
+}
+
+.signbutton {
+    /* margin-left: 10px; */
+    margin-top: 15px;
+    border-radius: 8px;
+    width: 23vh;
+    font-size: large;
+    height: 40px;
+    background-color: rgb(238, 170, 43);
+}
+.logout-button{
+    margin-left: 10px;
+    margin-top: 15px;
+    border-radius: 8px;
+    width: 23vh;
+    font-size: large;
+    height: 40px;
+    background-color: rgb(238, 170, 43);  
+}
+
+.sign-in-link {
+    color: white;
+    text-transform: capitalize;
+    text-decoration: none; /* Remove underline */
+}
+
+@media (max-width: 600px) {
+    .navbar {
+        flex-direction: column;
+    }
+}

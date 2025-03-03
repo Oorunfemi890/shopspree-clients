@@ -1,0 +1,188 @@
+/* General Styles */
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f9;
+  margin: 0;
+  padding: 0;
+}
+
+.signup-container {
+  max-width: 400px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+}
+.back-icon {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  font-size: 24px;
+  cursor: pointer;
+  color: #555;
+  text-decoration: none;
+}
+
+button:disabled {
+  background-color: #ddd;
+  cursor: not-allowed;
+}
+
+/* Resend button */
+button.resend-btn {
+  padding: 6px 12px;
+  font-size: 0.9em;
+  margin-top: 10px;
+  width: 29vh;
+  background-color: #28a745;
+  transition: background-color 0.3s;
+}
+
+button.resend-btn:disabled {
+  background-color: #ccc;
+  color: #666;
+}
+.email-display {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  font-size: 16px;
+}
+
+.edit-email {
+  font-size: 12px;
+  padding: 4px 8px;
+  margin-left: 10px;
+  color: white;
+  width: 20vh;
+  background-color: #007bff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.edit-email:hover {
+  background-color: #0056b3;
+}
+
+h2 {
+  text-align: center;
+  color: #333;
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+/* Input Fields and Buttons */
+input {
+  width: 100%;
+  padding: 12px;
+  margin-bottom: 15px;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  font-size: 16px;
+  background-color: #fafafa;
+}
+
+input:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+button {
+  width: 100%;
+  padding: 14px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* Pin Step */
+.pin-step p {
+  font-size: 14px;
+  color: #555;
+}
+
+#timer {
+  font-weight: bold;
+  color: #d9534f;
+}
+
+/* Pin Input Boxes */
+.pin-inputs {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.pin-inputs input {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  text-align: center;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  background-color: #fafafa;
+}
+
+.pin-inputs input:focus {
+  border-color: #007bff;
+  outline: none;
+  background-color: #fff;
+}
+
+.pin-inputs input:disabled {
+  background-color: #e9ecef;
+  cursor: not-allowed;
+}
+
+/* Links */
+.links {
+  text-align: center;
+  margin-top: 10px;
+}
+
+.links a {
+  color: #007bff;
+  text-decoration: none;
+}
+
+.links a:hover {
+  text-decoration: underline;
+}
+
+/* Password Validation */
+.password-validation {
+  margin-top: 10px;
+}
+
+.password-validation label {
+  margin-right: 15px;
+}
+
+.footer-text {
+  text-align: center;
+  margin-top: 30px;
+  color: #777;
+  font-size: 14px;
+  padding-bottom: 20px;
+  border-top: 1px solid #ddd;
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .signup-container {
+    width: 90%;
+    margin: 20px auto;
+  }
+}

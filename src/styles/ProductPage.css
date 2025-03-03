@@ -1,0 +1,137 @@
+/* Base Styles */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .product-layout {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .sidebar, .carousel {
+    height: 60vh; /* Ensure consistent height */
+  }
+  
+  .product-grid {
+    width: 100%;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 16px;
+  }
+  
+  /* Sidebar */
+  .sidebar {
+    width: 20%;
+    padding: 16px;
+    background-color: #f4f4f4;
+  }
+  
+  .sidebar h3 {
+    margin-top: 0;
+  }
+  
+  .sidebar ul {
+    list-style-type: none;
+    padding: 0;
+  }
+  
+  .sidebar li {
+    padding: 8px 0;
+    cursor: pointer;
+  }
+  
+  /* Carousel */
+  .carousel {
+    width: 60%;
+    overflow: hidden;
+    display: flex;
+  }
+  
+  .carousel img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .carousel img:hover {
+    transform: scale(1.05);
+  }
+  
+  /* Product Grid */
+  .product-grid {
+    width: 100%;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: repeat(5, 1fr); /* Default 5 columns */
+    gap: 16px;
+  }
+  
+  .product-card {
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 4px;
+    text-align: center;
+  }
+  
+  /* Media Queries */
+  @media (max-width: 1200px) {
+    .sidebar {
+      width: 25%;
+    }
+  
+    .carousel {
+      width: 65%;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    /* Stack sidebar on top with a toggle menu */
+    .product-layout {
+      flex-direction: column;
+    }
+  
+    .sidebar {
+      width: 100%;
+      display: none; /* Hide sidebar on smaller screens */
+    }
+  
+    .sidebar.show {
+      display: block;
+    }
+  
+    .carousel {
+      width: 100%;
+    }
+  
+    /* Display fewer columns in product grid */
+    .product-grid {
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    /* Mobile */
+    .product-grid {
+      grid-template-columns: repeat(2, 1fr); /* 2 products per row */
+    }
+  }
+  
+  /* Optional: Button to toggle sidebar */
+  .toggle-sidebar-btn {
+    display: none;
+    width: 100%;
+    text-align: left;
+    padding: 8px;
+    font-size: 16px;
+  }
+  
+  @media (max-width: 768px) {
+    .toggle-sidebar-btn {
+      display: block;
+    }
+  }
+  
