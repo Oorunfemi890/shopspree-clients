@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import "../styles/signup.css"; 
 import { useNavigate } from 'react-router-dom';
 
+const API_URL = 'https://shopspree-backend.onrender.com';
+
 
 const SignUp = () => {
   const [email, setEmail] = useState('');
@@ -34,7 +36,7 @@ const SignUp = () => {
     }
 
     try {
-      const response = await fetch('http://localhost:5002/api/send-pin', {
+      const response = await fetch(`${API_URL}/api/send-pin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email }),
@@ -60,7 +62,7 @@ const SignUp = () => {
     if (!canResend) return;
 
     try {
-      const response = await fetch('http://localhost:5002/api/send-pin', {
+      const response = await fetch(`${API_URL}/api/send-pin`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ email })
@@ -83,7 +85,7 @@ const SignUp = () => {
     const fullPin = pin.join('');
     if (fullPin.length === 6) {
       try {
-        const response = await fetch('http://localhost:5002/api/verify-pin', {
+        const response = await fetch(`${API_URL}/api/verify-pin`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ pin: fullPin, email })
@@ -111,7 +113,7 @@ const SignUp = () => {
   const submitForm = async () => {
     if (password === confirmPassword) {
       try {
-        const response = await fetch('http://localhost:5002/api/register', {
+        const response = await fetch(`${API_URL}/api/register`, {
           method: 'POST',
           headers: { 'Content-Type': 'application/json' },
           body: JSON.stringify({ email, password, phoneNumber, firstName, lastName })

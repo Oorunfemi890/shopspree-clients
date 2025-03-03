@@ -2,6 +2,9 @@ import React, { useState } from "react";
 import { useNavigate } from "react-router-dom"; 
 import "../styles/ForgottenPassword.css";
 
+const API_URL = 'https://shopspree-backend.onrender.com';
+
+
 const ForgottenPassword = () => {
     const [step, setStep] = useState(1);
     const [email, setEmail] = useState("");
@@ -16,7 +19,7 @@ const ForgottenPassword = () => {
 
     const handleEmailSubmit = async () => {
         try {
-            const response = await fetch("http://localhost:5002/api/forgot-password", {
+            const response = await fetch(`${API_URL}/api/forgot-password`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email }),
@@ -33,7 +36,7 @@ const ForgottenPassword = () => {
     const handleTokenSubmit = async () => {
         const tokenValue = token.join("");
         try {
-            const response = await fetch("http://localhost:5002/api/verify-token", {
+            const response = await fetch(`${API_URL}/api/verify-token`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, token: tokenValue }),
@@ -54,7 +57,7 @@ const ForgottenPassword = () => {
         }
 
         try {
-            const response = await fetch("http://localhost:5002/api/reset-password", {
+            const response = await fetch(`${API_URL}/api/reset-password`, {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ email, newPassword }),

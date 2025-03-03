@@ -2,6 +2,9 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import '../styles/ProductUpload.css';
 
+const API_URL = 'https://shopspree-backend.onrender.com';
+
+
 function ProductUpload() {
     const [name, setName] = useState('');
     const [price, setPrice] = useState('');
@@ -41,7 +44,7 @@ function ProductUpload() {
         formData.append('originalName', originalName);
 
         try {
-            const response = await axios.post('http://localhost:5002/api/create', formData, {
+            const response = await axios.post(`${API_URL}/api/create`, formData, {
                 headers: { 'Content-Type': 'multipart/form-data' },
             });
             alert('Product uploaded successfully!');

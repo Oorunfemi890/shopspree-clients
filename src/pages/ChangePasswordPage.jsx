@@ -3,6 +3,9 @@ import "../styles/ChangePassword.css";
 import { useNavigate } from "react-router-dom";
 import { FaEye, FaEyeSlash, FaEnvelope } from "react-icons/fa";
 
+const API_URL = 'https://shopspree-backend.onrender.com';
+
+
 const ChangePassword = () => {
   const [email, setEmail] = useState("");
   const [currentPassword, setCurrentPassword] = useState("");
@@ -28,7 +31,7 @@ const ChangePassword = () => {
     setLoading(true);
 
     try {
-      const response = await fetch("http://localhost:5002/api/change-password", {
+      const response = await fetch(`${API_URL}/api/change-password`, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ email, currentPassword, newPassword }),

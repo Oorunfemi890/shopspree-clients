@@ -4,6 +4,9 @@ import { useDispatch } from 'react-redux';
 import { setUser, loginFailure } from '../Redux/userSlice'; // Corrected import
 import "../styles/loginstyles.css";
 
+const API_URL = 'https://shopspree-backend.onrender.com';
+
+
 const LoginPage = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
@@ -15,7 +18,7 @@ const LoginPage = () => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://localhost:5002/api/login', {
+      const response = await fetch(`${API_URL}/api/login`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
